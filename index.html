@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ayudha Pooja Invitation | TDL Group of Companies</title>
+<meta name="description" content="You are cordially invited to the Ayudha Pooja celebration at TDL Group of Companies on 19 October 2026, 4 PM to 6 PM.">
+<link rel="icon" href="logo-small.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Great+Vibes&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="locked">
+
+<canvas id="fx" aria-hidden="true"></canvas>
+<div class="petals" id="petals" aria-hidden="true"></div>
+
+<!-- Cracker intro -->
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro-bg"></div>
+  <canvas id="introCv"></canvas>
+  <div class="intro-flash"></div>
+</div>
+
+<!-- Hero -->
+<header class="hero" id="top">
+  <svg class="mandala m-a" viewBox="0 0 400 400" aria-hidden="true"><use href="#mandala"/></svg>
+
+  <div class="hero-inner">
+    <div class="logo-wrap reveal">
+      <img src="logo-small.png" alt="TDL Group of Companies" class="logo">
+      <span class="glow"></span>
+    </div>
+    <p class="eyebrow reveal d1">TDL Group of Companies</p>
+    <p class="om reveal d1">ॐ</p>
+    <p class="script reveal d2">Cordially invites you to</p>
+    <h1 class="title" aria-label="Ayudha Pooja">
+      <span class="word" data-text="Ayudha">Ayudha</span>
+      <span class="word" data-text="Pooja">Pooja</span>
+    </h1>
+    <p class="tag reveal d3">Celebrating tools, craft &amp; the spirit of work</p>
+    <div class="divider reveal d3"><span></span><i>❖</i><span></span></div>
+    <a href="#when" class="scroll-hint reveal d4" aria-label="Scroll down"><span></span></a>
+  </div>
+
+  <div class="diyas" aria-hidden="true">
+    <div class="diya"><i class="flame"></i><b></b></div>
+    <div class="diya"><i class="flame"></i><b></b></div>
+    <div class="diya"><i class="flame"></i><b></b></div>
+  </div>
+</header>
+
+<!-- Message -->
+<section class="section message">
+  <div class="card reveal">
+    <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+    <p class="quote">
+      On this auspicious occasion, we gather to offer our gratitude to the tools, machines and
+      technologies that power our work, and to seek blessings for prosperity, success and
+      harmony for every member of the TDL family.
+    </p>
+    <p class="sign-lead">With warm regards,</p>
+    <p class="ceo">S J Jagadeesh</p>
+    <p class="ceo-role">Chief Managing Director · TDL Group of Companies</p>
+  </div>
+</section>
+
+<!-- Details -->
+<section class="section details" id="when">
+  <h2 class="h2 reveal">Save the Date</h2>
+  <div class="grid">
+    <article class="tile reveal d1">
+      <div class="icon">📅</div>
+      <h3>Date</h3>
+      <p class="big">19 October 2026</p>
+      <p class="sm">Monday</p>
+    </article>
+    <article class="tile reveal d2">
+      <div class="icon">🕓</div>
+      <h3>Time</h3>
+      <p class="big">4:00 PM – 6:00 PM</p>
+      <p class="sm">Please be seated by 3:55 PM</p>
+    </article>
+    <article class="tile reveal d3">
+      <div class="icon">🪔</div>
+      <h3>Venue</h3>
+      <p class="big">TDL Group of Companies</p>
+      <p class="sm">78, 6th Cross St, Alwartirunagar,<br>Valasaravakkam, Chennai,<br>Tamil Nadu 600087</p>
+      <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=78%2C+6th+Cross+St%2C+Alwartirunagar%2C+Valasaravakkam%2C+Chennai%2C+Tamil+Nadu+600087" target="_blank" rel="noopener">View on Map</a>
+    </article>
+  </div>
+
+  <div class="countdown reveal" id="countdown" aria-live="polite">
+    <div><b id="cd-d">00</b><span>Days</span></div>
+    <div><b id="cd-h">00</b><span>Hours</span></div>
+    <div><b id="cd-m">00</b><span>Minutes</span></div>
+    <div><b id="cd-s">00</b><span>Seconds</span></div>
+  </div>
+  <p class="cd-note reveal" id="cdNote">Until the pooja begins</p>
+</section>
+
+<button class="sound" id="burst" title="Celebrate!" aria-label="Celebrate">✨</button>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <g id="mandala" fill="none" stroke="currentColor" stroke-width="1">
+      <circle cx="200" cy="200" r="190"/><circle cx="200" cy="200" r="150" stroke-dasharray="3 6"/>
+      <circle cx="200" cy="200" r="110"/><circle cx="200" cy="200" r="60"/>
+      <g id="petal-ring">
+        <path d="M200 10 C230 70 230 110 200 150 C170 110 170 70 200 10Z"/>
+        <path d="M200 10 C230 70 230 110 200 150 C170 110 170 70 200 10Z" transform="rotate(30 200 200)"/>
+        <path d="M200 10 C230 70 230 110 200 150 C170 110 170 70 200 10Z" transform="rotate(60 200 200)"/>
+        <path d="M200 10 C230 70 230 110 200 150 C170 110 170 70 200 10Z" transform="rotate(90 200 200)"/>
+        <path d="M200 10 C230 70 230 110 200 150 C170 110 170 70 200 10Z" transform="rotate(120 200 200)"/>
+        <path d="M200 10 C230 70 230 110 200 150 C170 110 170 70 200 10Z" transform="rotate(150 200 200)"/>
+        <path d="M200 10 C230 70 230 110 200 150 C170 110 170 70 200 10Z" transform="rotate(180 200 200)"/>
+        <path d="M200 10 C230 70 230 110 200 150 C170 110 170 70 200 10Z" transform="rotate(210 200 200)"/>
+        <path d="M200 10 C230 70 230 110 200 150 C170 110 170 70 200 10Z" transform="rotate(240 200 200)"/>
+        <path d="M200 10 C230 70 230 110 200 150 C170 110 170 70 200 10Z" transform="rotate(270 200 200)"/>
+        <path d="M200 10 C230 70 230 110 200 150 C170 110 170 70 200 10Z" transform="rotate(300 200 200)"/>
+        <path d="M200 10 C230 70 230 110 200 150 C170 110 170 70 200 10Z" transform="rotate(330 200 200)"/>
+      </g>
+    </g>
+  </defs>
+</svg>
+
+<script src="script.js"></script>
+</body>
+</html>
