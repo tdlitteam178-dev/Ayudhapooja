@@ -203,11 +203,53 @@
     requestAnimationFrame(iframe);
   }
 
+  /* ---------- Start button, then auto-scroll tour ---------- */
+  let auto = true;
+  const stopAuto = () => { auto = false; };
+  ['wheel', 'touchstart', 'keydown', 'pointerdown'].forEach(ev =>
+    addEventListener(ev, e => { if (revealed && !(e.target.closest && e.target.closest('#burst'))) stopAuto(); }, { passive: true }));
+
+  const ease = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  function scrollTo(y, dur) {
+    return new Promise(res => {
+      const y0 = scrollY, t0 = performance.now();
+      const step = now => {
+        if (!auto) return res();
+        const t = Math.min((now - t0) / dur, 1);
+        window.scrollTo({ top: y0 + (y - y0) * ease(t), behavior: 'instant' });
+        t < 1 ? requestAnimationFrame(step) : res();
+      };
+      requestAnimationFrame(step);
+    });
+  }
+  const wait = ms => new Promise(r => setTimeout(r, ms));
+  function stopY(sel) {
+    const el = document.querySelector(sel);
+    const r = el.getBoundingClientRect();
+    const top = r.top + scrollY;
+    const y = r.height < innerHeight ? top - (innerHeight - r.height) / 2 : top - 24;
+    return Math.max(0, Math.min(y, document.documentElement.scrollHeight - innerHeight));
+  }
+  async function tour() {
+    const stops = ['#top', '.message .card', '#when .grid', '#countdown'];
+    await wait(2600 + 3150 + 1000);              // cracker, pieces land, then a pause
+    for (let i = 1; i < stops.length && auto; i++) {
+      await scrollTo(stopY(stops[i]), 1100);
+      if (!auto) return;
+      await wait(1500);
+    }
+  }
+
   if (reduced) {
     intro.remove(); reveal();
   } else {
     addEventListener('resize', iresize);
-    requestAnimationFrame(iframe);
+    document.getElementById('startBtn').addEventListener('click', () => {
+      intro.classList.add('started');
+      rockets[0].at = performance.now() + 500;
+      requestAnimationFrame(iframe);
+      tour();
+    });
   }
   document.getElementById('burst').addEventListener('click', () => fireworks(6));
 

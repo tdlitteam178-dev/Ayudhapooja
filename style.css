@@ -174,3 +174,16 @@ footer{margin-top:5rem;padding-top:2rem;border-top:1px solid rgba(232,184,74,.25
   font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;transition:background .25s,color .25s}
 .map-link:hover{background:var(--gold);color:var(--bg2)}
 
+
+/* ---------- Start screen ---------- */
+.intro-start{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem;text-align:center;transition:opacity .6s,transform .8s}
+.intro.started .intro-start{opacity:0;transform:scale(1.08);pointer-events:none}
+.intro-orn{font-size:1.6rem;color:var(--gold);animation:spin 8s linear infinite}
+.intro-title{font-family:'Cinzel',serif;font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:clamp(2.4rem,11vw,5.5rem);
+  background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.open-btn{font-family:'Cinzel',serif;letter-spacing:.3em;text-transform:uppercase;font-size:.85rem;font-weight:600;
+  color:#2a0a12;background:var(--gold-grad);border:0;border-radius:40px;padding:1rem 3rem;cursor:pointer;position:relative;
+  box-shadow:0 0 0 1px var(--gold-hi) inset,0 8px 30px rgba(232,184,74,.35);transition:transform .25s}
+.open-btn:hover{transform:scale(1.06)}
+.open-btn::after{content:"";position:absolute;inset:-2px;border-radius:40px;border:2px solid var(--gold);animation:ripple 2.2s ease-out infinite}
+@keyframes ripple{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.35,1.7);opacity:0}}
